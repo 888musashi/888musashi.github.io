@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>888musashi — Ajedrez desde Colombia</title>
+  <meta name="description" content="Streams de ajedrez en vivo, clases y contenido. 888musashi, ajedrez desde Colombia." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Reemplaza con tu propio favicon si quieres -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♞</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">♞ 888musashi</div>
+    <p class="tagline">Ajedrez en vivo · desde Colombia</p>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <h1>Jugando para ser el mejor de Colombia</h1>
+      <p>Streams, clases y contenido de ajedrez. Sígueme en vivo o suscríbete para no perderte nada.</p>
+      <a class="cta" href="#links">Ver enlaces ↓</a>
+    </section>
+
+    <!-- ============ LINKS HUB ============ -->
+    <section id="links" class="links">
+      <h2>Donde encontrarme</h2>
+      <div class="link-grid">
+        <!-- Reemplaza las URLs con tus perfiles reales -->
+        <a class="link-card" href="https://youtube.com/@888musashi" target="_blank" rel="noopener">▶ YouTube</a>
+        <a class="link-card" href="https://twitch.tv/888musashi" target="_blank" rel="noopener">🟣 Twitch</a>
+        <a class="link-card" href="https://x.com/888musashi" target="_blank" rel="noopener">✖ X (Twitter)</a>
+        <a class="link-card" href="https://instagram.com/888musashi" target="_blank" rel="noopener">📷 Instagram</a>
+        <a class="link-card" href="https://tiktok.com/@888musashi" target="_blank" rel="noopener">♪ TikTok</a>
+        <a class="link-card" href="https://discord.gg/888musashi" target="_blank" rel="noopener">💬 Discord</a>
+        <a class="link-card" href="https://wa.me/57XXXXXXXXXX" target="_blank" rel="noopener">📱 WhatsApp</a>
+        <a class="link-card" href="https://facebook.com/888musashi" target="_blank" rel="noopener">📘 Facebook</a>
+        <a class="link-card" href="https://threads.net/@888musashi" target="_blank" rel="noopener">@ Threads</a>
+      </div>
+    </section>
+
+    <!-- ============ EMBEDS EN VIVO ============ -->
+    <section class="live">
+      <h2>En vivo ahora</h2>
+      <div class="live-grid">
+        <!-- REEMPLAZA el canal con tu usuario de Twitch real -->
+        <div class="embed">
+          <h3>Twitch</h3>
+          <!-- El parent se inyecta con el hostname real para que funcione en cualquier dominio -->
+          <div id="twitch-embed"></div>
+        </div>
+        <!-- REEMPLAZA con tu ID de canal de YouTube (parámetro channel=ID) -->
+        <div class="embed">
+          <h3>YouTube</h3>
+          <iframe
+            src="https://www.youtube.com/embed/live_stream?channel=UCXXXXXXXXXXXXXX"
+            height="300" allowfullscreen></iframe>
+        </div>
+      </div>
+      <p class="hint">Nota: los embeds solo cargan en el dominio real (github.io / netlify). Localmente pueden no verse.</p>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="newsletter">
+      <h2>Suscríbete (gratis)</h2>
+      <p>Un email por semana con lo que estudio y mis próximos horarios de stream.</p>
+      <!-- OPCIÓN A: reemplaza con el embed de Beehiiv/ConvertKit (pegan el <script> que les da la plataforma) -->
+      <!-- OPCIÓN B: mientras tanto, un form mailto simple -->
+      <form action="https://formspree.io/f/TU_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="tu@email.com" required />
+        <button type="submit">Quiero recibirlo</button>
+      </form>
+      <p class="hint">Cambia el action por tu formulario: Beehiiv, ConvertKit o Formspree (free).</p>
+    </section>
+
+    <!-- ============ COACHING ============ -->
+    <section class="coaching">
+      <h2>Clases de ajedrez</h2>
+      <p>¿Quieres subir de rating? Pronto abro cupos de coaching 1-a-1. Deja tu email arriba y te aviso primero.</p>
+      <p class="hint">Esta sección es donde la web paga la inversión: aquí vendes tus clases.</p>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <section class="blog">
+      <h2>Blog</h2>
+      <p>Notas sobre lo que estudio y mis torneos.</p>
+      <a class="text-link" href="blog/index.html">Ir al blog →</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> 888musashi — Hecho con HTML gratis.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Twitch: inyecta el iframe con el parent = hostname actual (funciona en localhost, github.io y netlify.app)
+    (function () {
+      var host = window.location.hostname;
+      if (host === 'localhost' || host === '127.0.0.1') return; // en local no carga el embed
+      var f = document.createElement('iframe');
+      f.src = 'https://player.twitch.tv/?channel=888musashi&parent=' + host;
+      f.height = '300';
+      f.allowFullscreen = true;
+      f.style.width = '100%';
+      f.style.border = '0';
+      f.style.borderRadius = '10px';
+      f.style.background = '#000';
+      document.getElementById('twitch-embed').appendChild(f);
+    })();
+  </script>
+</body>
+</html>
