@@ -39,6 +39,13 @@
     </section>
 
     <!-- ============ EMBEDS EN VIVO ============ -->
+    <!-- ============ ÚLTIMOS VIDEOS (dinámico) ============ -->
+    <section class="videos">
+      <h2>Últimos videos</h2>
+      <div id="yt-grid" class="link-grid"></div>
+      <p class="hint">Cargados automáticamente desde el canal de YouTube.</p>
+    </section>
+
     <section class="live">
       <h2>En vivo ahora</h2>
       <div class="live-grid">
@@ -106,6 +113,36 @@
       f.style.borderRadius = '10px';
       f.style.background = '#000';
       document.getElementById('twitch-embed').appendChild(f);
+    })();
+
+    // YouTube: carga los últimos videos del canal de forma dinámica
+    (function () {
+      var KEY = "AIzaSyCGiVtuhpmbHJ9WxKUOAAcHN4kbc5Vls1w";
+      var CHANNEL = "UCnvAn8-h8NxKik5eFCwDsNA";
+      var grid = document.getElementById('yt-grid');
+      if (!grid) return;
+      fetch("https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=" + CHANNEL + "&key=" + KEY)
+        .then(r => r.json())
+        .then(d => {
+          var up = d.items[0].contentDetails.relatedPlaylists.uploads;
+          return fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=" + up + "&maxResults=8&key=" + KEY);
+        })
+        .then(r => r.json())
+        .then(d => {
+          grid.innerHTML = '';
+          d.items.forEach(function (it) {
+            var sn = it.snippet;
+            var id = sn.resourceId.videoId;
+            var a = document.createElement('a');
+            a.className = 'link-card';
+            a.href = "https://www.youtube.com/watch?v=" + id;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.innerHTML = '▶ ' + sn.title;
+            grid.appendChild(a);
+          });
+        })
+        .catch(function () { grid.innerHTML = '<p class="hint">No se pudieron cargar los videos ahora.</p>'; });
     })();
   </script>
 </body>
