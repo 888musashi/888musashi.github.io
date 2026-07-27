@@ -39,10 +39,10 @@
     </section>
 
     <!-- ============ EMBEDS EN VIVO ============ -->
-    <!-- ============ ÚLTIMOS VIDEOS (dinámico) ============ -->
+    <!-- ============ ÚLTIMOS VIDEOS (dinámico con miniaturas) ============ -->
     <section class="videos">
       <h2>Últimos videos</h2>
-      <div id="yt-grid" class="link-grid"></div>
+      <div id="yt-grid" class="video-grid"></div>
       <p class="hint">Cargados automáticamente desde el canal de YouTube.</p>
     </section>
 
@@ -115,12 +115,16 @@
       document.getElementById('twitch-embed').appendChild(f);
     })();
 
-    // YouTube: carga los últimos videos del canal de forma dinámica
+    // YouTube: carga los últimos videos del canal con miniaturas
     (function () {
-      var KEY = "AIzaSyCGiVtuhpmbHJ9WxKUOAAcHN4kbc5Vls1w";
+      var KEY = "«redacted:AIza…»";
       var CHANNEL = "UCnvAn8-h8NxKik5eFCwDsNA";
       var grid = document.getElementById('yt-grid');
       if (!grid) return;
+      function thumb(sn){
+        var t = sn.thumbnails || {};
+        return (t.medium && t.medium.url) || (t.default && t.default.url) || (t.high && t.high.url) || '';
+      }
       fetch("https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=" + CHANNEL + "&key=" + KEY)
         .then(r => r.json())
         .then(d => {
@@ -134,11 +138,11 @@
             var sn = it.snippet;
             var id = sn.resourceId.videoId;
             var a = document.createElement('a');
-            a.className = 'link-card';
+            a.className = 'video-card';
             a.href = "https://www.youtube.com/watch?v=" + id;
             a.target = '_blank';
             a.rel = 'noopener';
-            a.innerHTML = '▶ ' + sn.title;
+            a.innerHTML = '<img src="' + thumb(sn) + '" alt="" loading="lazy"><span>' + sn.title + '</span>';
             grid.appendChild(a);
           });
         })
