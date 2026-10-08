@@ -5,92 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>888musashi — Ajedrez desde Colombia</title>
   <meta name="description" content="Streams de ajedrez en vivo, clases y contenido. 888musashi, ajedrez desde Colombia." />
+  <meta name="keywords" content="ajedrez, chess, streaming, clases, ajedrez colombia, 888musashi" />
+  <meta name="author" content="888musashi" />
+  <link rel="canonical" href="https://888musashi.com/" />
   <link rel="stylesheet" href="assets/styles.css" />
-  <!-- Reemplaza con tu propio favicon si quieres -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♞</text></svg>" />
+  <meta property="og:title" content="888musashi — Ajedrez desde Colombia" />
+  <meta property="og:description" content="Streams de ajedrez en vivo, clases y contenido. 888musashi, ajedrez desde Colombia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://888musashi.com/" />
+  <meta property="og:image" content="https://888musashi.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="888musashi — Ajedrez desde Colombia" />
+  <meta name="twitter:description" content="Streams de ajedrez en vivo, clases y contenido. 888musashi, ajedrez desde Colombia." />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">♞ 888musashi</div>
+    <div class="logo">
+      <svg viewBox="0 0 40 40" width="40" height="40">
+        <rect width="40" height="40" rx="8" fill="#f0c674" opacity="0.2" />
+        <text y=".9em" font-size="34" text-anchor="middle" font-family="serif" font-weight="bold">♞</text>
+      </svg>
+      <div class="logo-text">888musashi</div>
+    </div>
     <p class="tagline">Ajedrez en vivo · desde Colombia</p>
   </header>
 
   <main>
-    <!-- ============ HERO ============ -->
     <section class="hero">
-      <h1>Jugando para ser el mejor de Colombia</h1>
-      <p>Streams, clases y contenido de ajedrez. Sígueme en vivo o suscríbete para no perderte nada.</p>
-      <a class="cta" href="#links">Ver enlaces ↓</a>
+      <div class="hero-content">
+        <h1>Jugando para ser el mejor de Colombia</h1>
+        <p>Streams de ajedrez en vivo, clases y contenido. Sígueme en directo o suscríbete para no perderte nada.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#links">Ver enlaces ↓</a>
+          <a class="btn-secondary" href="#stream">Ver en vivo ▶</a>
+        </div>
+      </div>
     </section>
 
-    <!-- ============ LINKS HUB ============ -->
     <section id="links" class="links">
-      <h2>Donde encontrarme</h2>
-      <div class="link-grid">
-        <!-- Reemplaza las URLs con tus perfiles reales -->
-        <a class="link-card" href="https://www.youtube.com/@888Musashi" target="_blank" rel="noopener">▶ YouTube</a>
-        <a class="link-card" href="https://twitch.tv/888musashi" target="_blank" rel="noopener">🟣 Twitch</a>
-        <a class="link-card" href="https://x.com/888Musashi888" target="_blank" rel="noopener">✖ X (Twitter)</a>
-        <a class="link-card" href="https://instagram.com/888musashi" target="_blank" rel="noopener">📷 Instagram</a>
-        <a class="link-card" href="https://tiktok.com/@888musashi" target="_blank" rel="noopener">♪ TikTok</a>
-        <a class="link-card" href="https://facebook.com/888Musashi" target="_blank" rel="noopener">📘 Facebook</a>
-        <a class="link-card" href="https://threads.net/@888musashi" target="_blank" rel="noopener">@ Threads</a>
+      <div class="container">
+        <h2 class="section-title">Donde encontrarme</h2>
+        <div class="link-grid">
+          <a class="link-card" href="https://www.youtube.com/@888Musashi" target="_blank" rel="noopener">
+            <div class="link-icon">▶</div>
+            <span>YouTube</span>
+          </a>
+          <a class="link-card" href="https://twitch.tv/888musashi" target="_blank" rel="noopener">
+            <div class="link-icon">🟣</div>
+            <span>Twitch</span>
+          </a>
+          <a class="link-card" href="https://x.com/888Musashi888" target="_blank" rel="noopener">
+            <div class="link-icon">✖</div>
+            <span>X (Twitter)</span>
+          </a>
+          <a class="link-card" href="https://instagram.com/888musashi" target="_blank" rel="noopener">
+            <div class="link-icon">📷</div>
+            <span>Instagram</span>
+          </a>
+          <a class="link-card" href="https://tiktok.com/@888musashi" target="_blank" rel="noopener">
+            <div class="link-icon">♪</div>
+            <span>TikTok</span>
+          </a>
+          <a class="link-card" href="https://facebook.com/888Musashi" target="_blank" rel="noopener">
+            <div class="link-icon">📘</div>
+            <span>Facebook</span>
+          </a>
+          <a class="link-card" href="https://threads.net/@888musashi" target="_blank" rel="noopener">
+            <div class="link-icon">@</div>
+            <span>Threads</span>
+          </a>
+          <a class="link-card" href="mailto:contacto@888musashi.com" target="_blank" rel="noopener">
+            <div class="link-icon">✉</div>
+            <span>Contacto</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ============ EMBEDS EN VIVO ============ -->
-    <!-- ============ ÚLTIMOS VIDEOS (dinámico con miniaturas) ============ -->
-    <section class="videos">
-      <h2>Últimos videos</h2>
-      <div id="yt-grid" class="video-grid"></div>
-      <p class="hint">Cargados automáticamente desde el canal de YouTube.</p>
-    </section>
-
-    <section class="live">
-      <h2>En vivo ahora</h2>
-      <div class="live-grid">
-        <!-- REEMPLAZA el canal con tu usuario de Twitch real -->
-        <div class="embed">
-          <h3>Twitch</h3>
-          <!-- El parent se inyecta con el hostname real para que funcione en cualquier dominio -->
-          <div id="twitch-embed"></div>
+    <section id="stream" class="stream">
+      <div class="container">
+        <h2 class="section-title">En vivo ahora</h2>
+        <div class="stream-grid">
+          <div class="embed">
+            <h3>Twitch</h3>
+            <div id="twitch-embed"></div>
+          </div>
+          <div class="embed">
+            <h3>YouTube</h3>
+            <iframe
+              src="https://www.youtube.com/embed?listType=search&list=888Musashi%20live"
+              height="300" allowfullscreen></iframe>
+          </div>
         </div>
-        <!-- URL de live embebible por handle (no requiere ID) -->
-        <div class="embed">
-          <h3>YouTube</h3>
-          <iframe
-            src="https://www.youtube.com/embed?listType=search&list=888Musashi%20live"
-            height="300" allowfullscreen></iframe>
-        </div>
+        <p class="hint">Nota: los embeds solo cargan en el dominio real (github.io / netlify). Localmente pueden no verse.</p>
       </div>
-      <p class="hint">Nota: los embeds solo cargan en el dominio real (github.io / netlify). Localmente pueden no verse.</p>
     </section>
 
-    <!-- ============ NEWSLETTER ============ -->
-    <section class="newsletter">
-      <h2>Suscríbete (gratis)</h2>
-      <p>Un email por semana con lo que estudio y mis próximos horarios de stream.</p>
-      <!-- OPCIÓN A: reemplaza con el embed de Beehiiv/ConvertKit (pegan el <script> que les da la plataforma) -->
-      <!-- OPCIÓN B: mientras tanto, un form mailto simple -->
-      <form action="https://formspree.io/f/TU_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="tu@email.com" required />
-        <button type="submit">Quiero recibirlo</button>
-      </form>
-      <p class="hint">Cambia el action por tu formulario: Beehiiv, ConvertKit o Formspree (free).</p>
-    </section>
-
-    <!-- ============ COACHING ============ -->
-    <section class="coaching">
-      <h2>Clases de ajedrez</h2>
-      <p>¿Quieres subir de rating? Pronto abro cupos de coaching 1-a-1. Deja tu email arriba y te aviso primero.</p>
-      <p class="hint">Esta sección es donde la web paga la inversión: aquí vendes tus clases.</p>
-    </section>
-
-    <!-- ============ BLOG ============ -->
     <section class="blog">
-      <h2>Blog</h2>
-      <p>Notas sobre lo que estudio y mis torneos.</p>
-      <a class="text-link" href="blog/index.html">Ir al blog →</a>
+      <div class="container">
+        <h2 class="section-title">Blog</h2>
+        <div class="blog-grid">
+          <article class="blog-post">
+            <h3>Últimos videos</h3>
+            <p>Notas sobre lo que estudio y mis torneos. Ver los últimos clips en YouTube.</p>
+            <a class="text-link" href="https://www.youtube.com/@888Musashi" target="_blank" rel="noopener">Ver en YouTube →</a>
+          </article>
+          <article class="blog-post">
+            <h3>Clases de ajedrez</h3>
+            <p>¿Quieres subir de rating? Pronto abro cupos de coaching 1-a-1. Deja tu email arriba y te aviso primero.</p>
+            <a class="text-link" href="#newsletter">Suscribirse al newsletter →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+      <div class="container">
+        <h2 class="section-title">Suscríbete (gratis)</h2>
+        <p>Un email por semana con lo que estudio y mis próximos horarios de stream.</p>
+        <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="newsletter-form">
+          <input type="email" name="email" placeholder="tu@email.com" required />
+          <button type="submit" class="btn-primary">Quiero recibirlo</button>
+        </form>
+        <p class="hint">Cambia el action por tu formulario: Beehiiv, ConvertKit o Formspree (free).</p>
+      </div>
+    </section>
+
+    <section class="coaching">
+      <div class="container">
+        <h2 class="section-title">Clases de ajedrez</h2>
+        <p>¿Quieres subir de rating? Pronto abro cupos de coaching 1-a-1. Deja tu email arriba y te aviso primero.</p>
+        <p class="hint">Esta sección es donde la web paga la inversión: aquí vendes tus clases.</p>
+        <a class="btn-primary" href="#newsletter">Activar notificación</a>
+      </div>
     </section>
   </main>
 
@@ -100,10 +148,9 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Twitch: inyecta el iframe con el parent = hostname actual (funciona en localhost, github.io y netlify.app)
     (function () {
       var host = window.location.hostname;
-      if (host === 'localhost' || host === '127.0.0.1') return; // en local no carga el embed
+      if (host === 'localhost' || host === '127.0.0.1') return;
       var f = document.createElement('iframe');
       f.src = 'https://player.twitch.tv/?channel=888musashi&parent=' + host;
       f.height = '300';
@@ -114,22 +161,14 @@
       f.style.background = '#000';
       document.getElementById('twitch-embed').appendChild(f);
     })();
-
-    // YouTube: carga los últimos videos del canal con miniaturas
     (function () {
-      var KEY = "«redacted:AIza…»";
-      var CHANNEL = "UCnvAn8-h8NxKik5eFCwDsNA";
       var grid = document.getElementById('yt-grid');
       if (!grid) return;
-      function thumb(sn){
-        var t = sn.thumbnails || {};
-        return (t.medium && t.medium.url) || (t.default && t.default.url) || (t.high && t.high.url) || '';
-      }
-      fetch("https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=" + CHANNEL + "&key=" + KEY)
+      fetch("https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=UCnvAn8-h8NxKik5eFCwDsNA&key=«redacted:AIza…»")
         .then(r => r.json())
         .then(d => {
           var up = d.items[0].contentDetails.relatedPlaylists.uploads;
-          return fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=" + up + "&maxResults=8&key=" + KEY);
+          return fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=" + up + "&maxResults=8&key=«redacted:AIza…»");
         })
         .then(r => r.json())
         .then(d => {
@@ -142,7 +181,7 @@
             a.href = "https://www.youtube.com/watch?v=" + id;
             a.target = '_blank';
             a.rel = 'noopener';
-            a.innerHTML = '<img src="' + thumb(sn) + '" alt="" loading="lazy"><span>' + sn.title + '</span>';
+            a.innerHTML = '<img src="' + (sn.thumbnails.medium && sn.thumbnails.medium.url || sn.thumbnails.default && sn.thumbnails.default.url || sn.thumbnails.high && sn.thumbnails.high.url || '') + '" alt="" loading="lazy"><span>' + sn.title + '</span>';
             grid.appendChild(a);
           });
         })
